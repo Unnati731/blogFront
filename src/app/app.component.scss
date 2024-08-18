@@ -1,0 +1,17 @@
+.example-spacer {
+    flex: 1 1 auto;
+  }
+  mat-toolbar {
+    background-color: rgba(0, 0, 255, 0.308); // Set the background color of the toolbar
+    color: white; // Set the text color to white
+  
+    .mat-raised-button {
+      background-color: rgba(0, 0, 255, 0.308); // Set the button background color to blue
+      color: white; // Ensure the button text is white
+  
+      &:hover {
+        background-color: rgb(122, 122, 235); // Slightly darker blue on hover
+      }
+    }
+  }
+  
