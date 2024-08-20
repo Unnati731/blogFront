@@ -5,7 +5,7 @@
             <mat-card-title>{{postData.name}}</mat-card-title>
             <mat-card-subtitle>Posted by : {{postData.postedBy}}</mat-card-subtitle>
         </mat-card-header>
-        <img mat-card-image [src]="postData.image" height="300px" class="img" alt="Card Image"/>
+        <img mat-card-image [src]="postData.image" class ="post-img" alt="Card Image"/> 
         <mat-card-content>
             {{postData.content}}
         </mat-card-content>
@@ -39,7 +39,8 @@
                         <input matInput formControlName="postedBy">
                     </mat-form-field>
 
-                    <button mat-raised-button (click)="publishComment()" color="primary" style="float : right;" [disabled]="!commentForm.valid">Publish Comment</button>               </form>
+                    <button mat-raised-button (click)="publishComment()" color="primary" style="float : right;" [disabled]="!commentForm.valid">Publish Comment</button>               
+                </form>
             </div>
         </mat-card-content>
     </mat-card>
@@ -53,8 +54,7 @@
                 <mat-card-subtitle>{{comment.createdAt | date:'medium'}}</mat-card-subtitle>
             </mat-card-header>
             <mat-card-content>
-                {{comment.content}}
-                
+                {{comment.content}} 
             </mat-card-content>
         </mat-card>
     </div>

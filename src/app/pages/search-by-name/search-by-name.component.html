@@ -4,7 +4,7 @@
 
         <input matInput [(ngModel)]="name">
 
-        <button mat-button matSuffix color="primary" (click)="searchByName()"><mat-icon>Search</mat-icon></button>
+        <button mat-button matSuffix color="primary" (click)="searchByName()"><mat-icon>search</mat-icon></button>
     </mat-form-field>
 </div>
 
@@ -24,7 +24,7 @@
 
         <mat-grid-list cols="5">
             <mat-grid-tile [colspan]="2" [rowspan]="1">
-                <img mat-card-image [src] = "item.img" class ="post-img" alt="Card Image" />   
+                <img mat-card-image [src] = "item.image" class ="post-img" alt="Card Image" />   
             </mat-grid-tile>
             <mat-grid-tile [colspan] ="3" [rowspan]="1">
                 <mat-card-content>
@@ -35,7 +35,9 @@
 
         <hr>
         <mat-card-actions>
-            <button mat-raised-button color="primary">{{item.likeCount}}</button>
+            <button mat-raised-button color="primary">{{item.likeCount}}
+                <mat-icon>favorite icon</mat-icon>
+            </button>
             <button mat-raised-button color="primary" style="margin-left: 5px;">{{item.viewCount}}
                 <mat-icon>remove_red_eye</mat-icon></button>
                 <button mat-raised-button color="primary" style="margin-left: 5px;" routerLink="/view-post/{{item.id}}">View Post</button>

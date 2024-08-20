@@ -90,7 +90,18 @@ export class ViewPostComponent {
   getCommentsByPost() {
     this.commentService.getAllCommentsByPost(this.postId).subscribe(
       res => {
-        this.comments = res;
+        this.comments = res.map((comment: { content: string; }) => {
+          // Check if content is a JSON string and parse it
+          if (comment.content && comment.content.startsWith('{')) {
+            try {
+              const parsedContent = JSON.parse(comment.content);
+              return { ...comment, content: parsedContent.content };
+            } catch (e) {
+              console.error('Error parsing content:', e);
+            }
+          }
+          return comment;
+        });
       },
       error => {
         console.error("Error fetching comments:", error);
@@ -98,4 +109,5 @@ export class ViewPostComponent {
       }
     );
   }
+  
 }
